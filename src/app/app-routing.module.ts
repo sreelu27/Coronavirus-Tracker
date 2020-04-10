@@ -7,15 +7,7 @@ import { ContinentListComponent } from './components/continent-list/continent-li
 
 
 const routes: Routes = [
-  {
-  path:'home', component:HomeComponent
- },
- {
-  path:'', redirectTo:'home',pathMatch:'full'
-},
-{
-  path:'**', redirectTo:'home',pathMatch:'full'
-},
+  
  {
    path:'countries', component:CountriesListComponent
  },
@@ -24,7 +16,16 @@ const routes: Routes = [
  },
  {
    path:'continents',component:ContinentListComponent
- }
+ },
+ {
+  path:'home', component:HomeComponent
+ },
+ {
+  path:'', redirectTo:'home',pathMatch:'full'
+},
+{
+  path:'**', redirectTo:'home',pathMatch:'full'
+},
 ];
 
 @NgModule({
