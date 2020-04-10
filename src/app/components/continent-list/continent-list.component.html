@@ -1,0 +1,40 @@
+<div class="container text-center">
+
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+    <table class="table table-bordered tableFixHead">
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Total Cases</th>
+                <th>New Cases</th>
+                <th>Total Deaths</th>
+                <th>New Deaths</th>
+                <th>Total Recovered</th>
+                <th>Active Cases</th>
+                <th>Serious or Critical</th>
+                <th>Total Cases per 1M</th>
+                <th>Total Deaths per 1M</th>
+                <th>Total Tests</th>
+                <th>Total Deaths per 1M</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let continent of continentWiseData">
+                <td><a [routerLink]="['/countries',continent.country]">{{continent.country}}</a></td>
+                <td>{{continent.cases |number}}</td>
+                <td>{{continent.todayCases |number}}</td>
+                <td>{{continent.deaths |number}}</td>
+                <td>{{continent.todayDeaths |number}}</td>
+                <td>{{continent.recovered |number}}</td>
+                <td>{{continent.active |number}}</td>
+                <td>{{continent.critical |number}}</td>
+                <td>{{continent.casesPerOneMillion |number}}</td>
+                <td>{{continent.deathsPerOneMillion |number}}</td>
+                <td>{{continent.totalTests |number}}</td>
+                <td>{{continent.testsPerOneMillion |number}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
