@@ -3,16 +3,27 @@
         {{id | uppercase}}
     </div>
     <div class="card-body">
-    <div class="container text-center">
-        <h3>Coronavirus Cases:</h3>
-        <h5>{{specificCountry.cases | number}}</h5>
+        <div class="container text-center">
 
-        <h3>Deaths:</h3>
-        <h5>{{specificCountry.deaths | number}}</h5>
+            <h3>Coronavirus Cases:</h3>
+            <h5>{{specificCountry.cases | number}}</h5>
 
-        <h3>Recovered:</h3>
-        <h5>{{specificCountry.recovered | number}}</h5>
+            <h3>New Cases:</h3>
+            <h5>{{specificCountry.todayCases | number}}</h5>
 
+            <h3>Deaths:</h3>
+            <h5>{{specificCountry.deaths | number}}</h5>
+
+            <h3>Recovered:</h3>
+            <h5>{{specificCountry.recovered | number}}</h5>
+
+        </div>
     </div>
 </div>
+<div class="chart-wrapper">
+    <canvas baseChart 
+    [data]="doughnutChartData"
+    [labels]="doughnutChartLabels"
+    [chartType]="doughnutChartType">
+  </canvas>
 </div>

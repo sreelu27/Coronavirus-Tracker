@@ -10,24 +10,23 @@ import { CoronavirusDataService } from 'src/app/services/coronavirus-data.servic
 export class CountryDetailComponent implements OnInit {
 
   public specificCountry;
-
   id:string='';
+
   constructor(private route: ActivatedRoute,private coronavirusDataService:CoronavirusDataService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.getCountryFromName(this.id);
+    this.getCountryFromName(this.id);  
   }
 
   getCountryFromName(id:string){
     this.coronavirusDataService.getCountry(id).subscribe(
       data=>{
-        this.specificCountry=data;
+        this.specificCountry = data; 
       },
-      err=>console.error(err),
+      err => console.error(err),
       ()=>console.log('Specific Country Details Loaded')
     );
   }
 
-  
 }

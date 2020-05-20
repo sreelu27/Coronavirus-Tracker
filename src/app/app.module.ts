@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CountriesListComponent } from './components/countries-list/countries-list.component';
@@ -25,7 +24,7 @@ import { ContinentListComponent } from './components/continent-list/continent-li
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
